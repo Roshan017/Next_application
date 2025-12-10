@@ -12,7 +12,7 @@ const Navbar = () => {
         <ul className="text-white">
           <Link href={"/"}>Home</Link>
           <Link href={"/"}>Events</Link>
-          <Link href={"/"}>Create Event</Link>
+          <Link href={"/"}>Create</Link>
         </ul>
       </nav>
     </header>
