@@ -1,6 +1,28 @@
-import Image from "next/image";
-
+import ExploreBtn from "@/components/ExploreBtn";
 export default function Home() {
-  console.log("This is the Home comp");
-  return <div className="text-6xl font-bold ">Hello World</div>;
+  return (
+    <section>
+      <h1 className="text-center font-bold opacity-85">
+        Build. Learn. Compete.
+        <br />
+        Repeat.
+      </h1>
+      <p className="text-center mt-8">
+        The ultimate hub for every dev event you crave
+      </p>
+      <ExploreBtn />
+
+      <div className="mt-20 space-y-7">
+        <h3>Featured Events</h3>
+
+        <ul className="events">
+          {["Hackathon X", "CodeFest 2024", "DevCon Summit"].map((event) => (
+            <li className="text-white" key={event}>
+              {event}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
 }
