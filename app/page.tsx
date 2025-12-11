@@ -1,4 +1,5 @@
 import ExploreBtn from "@/components/ExploreBtn";
+import EventCard from "@/components/EventCard";
 export default function Home() {
   return (
     <section>
@@ -18,7 +19,7 @@ export default function Home() {
         <ul className="events">
           {["Hackathon X", "CodeFest 2024", "DevCon Summit"].map((event) => (
             <li className="text-white" key={event}>
-              {event}
+              <EventCard title={event} image="" />
             </li>
           ))}
         </ul>
