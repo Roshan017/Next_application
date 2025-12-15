@@ -38,7 +38,7 @@ const EventGrid = () => {
       {loading ? (
         <p className="text-center">Loading Events....</p>
       ) : (
-        <ul className="events">
+        <ul className="events list-none">
           {events.map((event) => (
             <li className="text-white" key={event.id}>
               <EventCard {...event} />
