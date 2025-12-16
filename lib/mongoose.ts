@@ -3,10 +3,6 @@ import mongoose, { Mongoose } from "mongoose";
 
 const MONGODB_URL = process.env.MongoDB_URL || "";
 
-if (!MONGODB_URL) {
-  throw new Error("MONGO_DB URL is not defined");
-}
-
 interface MongooseConnect {
   conn: Mongoose | null;
   promise: Promise<Mongoose> | null;
@@ -19,6 +15,9 @@ if (!cached.mongoose) {
 }
 
 export async function ConnectDB(): Promise<Mongoose> {
+  if (!MONGODB_URL) {
+    throw new Error("MONGO_DB URL is not defined");
+  }
   if (cached.mongoose.conn) {
     return cached.mongoose.conn;
   }

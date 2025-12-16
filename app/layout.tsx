@@ -32,13 +32,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${martianMono.variable} min-h-screen antialiased bg-black`}
+        className={`${poppins.variable} ${martianMono.variable} antialiased bg-black`}
       >
-        <Navbar />
-        <div className="absolute inset-0 z-[-1] top-0 min-h-screen min-w-screen opacity-100 bg-repeat">
-          <DarkVeil />
+        <div className="relative min-h-screen overflow-hidden">
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            <DarkVeil />
+          </div>
+
+          <div className="relative z-10">
+            <Navbar />
+            <main>{children}</main>
+          </div>
         </div>
-        <main>{children}</main>
       </body>
     </html>
   );
