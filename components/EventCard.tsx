@@ -21,7 +21,7 @@ const EventCard = ({
 }: Props) => {
   const date = new Date(dateTime);
   return (
-    <Link href={`/events/${id}`} id="event-card">
+    <Link href={`/event/${id}`} id="event-card">
       <div className="relative w-full h-80 overflow-hidden rounded-xl">
         <Image src={image} alt={name} fill className="object-cover" />
       </div>
