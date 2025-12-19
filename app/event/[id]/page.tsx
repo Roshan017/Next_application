@@ -3,6 +3,8 @@ import Image from "next/image";
 import EventDetailitem from "@/components/EventDetailitem";
 import EventVenue from "@/components/EventVenue";
 import SimmilarEvents from "@/components/SimmilarEvents";
+import path from "path";
+import BookEvent from "@/components/BookEvent";
 
 interface EventProps {
   params: Promise<{ id: string }>;
@@ -32,6 +34,7 @@ const EventPage = async ({ params }: EventProps) => {
   if (!res) return notFound();
 
   const event = await res.json();
+  const bookings = Math.floor(Math.random() * 100) + 1;
 
   return (
     <section id="event">
@@ -88,7 +91,15 @@ const EventPage = async ({ params }: EventProps) => {
         </div>
 
         <aside className="booking">
-          <p className="text-lg font-semibold">Book Event</p>
+          <div className="signup-card">
+            <h2>Book Your Spot</h2>
+            {bookings > 0 ? (
+              <p>Join {bookings} people who have already booked their spot</p>
+            ) : (
+              <p>Be the first one to book your spot</p>
+            )}
+            <BookEvent fee={event.fee} />
+          </div>
         </aside>
       </div>
     </section>
