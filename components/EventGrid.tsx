@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import EventCard from "./EventCard";
 import { useEffect } from "react";
+import Loader from "./Loader";
 
 interface Events {
   image: string;
@@ -36,7 +37,7 @@ const EventGrid = () => {
   return (
     <div>
       {loading ? (
-        <p className="text-center">Loading Events....</p>
+        <Loader />
       ) : (
         <ul className="events list-none">
           {events.map((event) => (

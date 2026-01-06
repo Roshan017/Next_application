@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Loader from "./Loader";
 
 interface Events {
   image: string;
@@ -31,7 +32,7 @@ const SimmilarEvents = ({ id }: { id: string }) => {
     fetchEvents();
   }, [id]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader />;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -98,7 +98,7 @@ const EventPage = async ({ params }: EventProps) => {
             ) : (
               <p>Be the first one to book your spot</p>
             )}
-            <BookEvent fee={event.fee} />
+            <BookEvent Event={event} />
           </div>
         </aside>
       </div>
